@@ -13,11 +13,12 @@ dim = (224,224) # for MobileNetV2
 n_sequence = 8 # for LSTM
 n_channels = 3 # color channel(RGB)
 n_output = 18 # number of output class
-path_dataset = 'F:/Master Project/Dataset/KARD-split/'
+# path_dataset = 'F:/Master Project/Dataset/KARD-split/'
+path_dataset = 'D:/peach/Dataset/KARD-split/'
 
 # Keyword argument
 params = {'dim': dim,
-          'batch_size': 2, # you can increase for faster training
+          'batch_size': 4, # you can increase for faster training
           'n_sequence': n_sequence,
           'n_channels': n_channels,
           'path_dataset': path_dataset,
@@ -36,33 +37,33 @@ test_d = readfile_to_dict(test_txt)
 
 # Prepare key, name of video(X)
 train_keys = list(train_d.keys()) * 1
-test_keys = list(test_d.keys()) * 1
+test_keys = list(test_d.keys()) * 4
 
 # Generators
-training_generator = DataGenerator(train_keys[:20] , train_d, **params, type_gen='train')
-validation_generator = DataGenerator(test_keys[:20] , test_d, **params, type_gen='test')
+training_generator = DataGenerator(train_keys, train_d, **params, type_gen='train')
+validation_generator = DataGenerator(test_keys, test_d, **params, type_gen='test')
 
 # Design model
 model = create_model_pretrain(dim, n_sequence, n_channels, n_output, type='train')
 start_epoch = 0
 
 # Load weight of unfinish training model(optional)
-load_model = False
+load_model = True
 if load_model:
-    weights_path = '.....' # name of model 
-    start_epoch = 0
+    weights_path = 'save_weight/weight-300-0.73-0.81.hdf5' # name of model 
+    start_epoch = 300
     model.load_weights(weights_path)
 
 # Set callback
-validate_freq = 1
+validate_freq = 3
 filepath = "save_weight/"+"weight-{epoch:02d}-{accuracy:.2f}-{val_accuracy:.2f}.hdf5"
-checkpoint = ModelCheckpoint(filepath, monitor='val_accuracy', verbose=1, save_best_only=True, period=validate_freq)
+checkpoint = ModelCheckpoint(filepath, monitor='val_accuracy', verbose=1, save_best_only=False, period=validate_freq)
 callbacks_list = [checkpoint]
 
 # # Train model on dataset
 model.fit_generator(generator=training_generator,
                     validation_data=validation_generator,
-                    epochs=300,
+                    epochs=600,
                     callbacks=callbacks_list,
                     initial_epoch=start_epoch,                 
                     validation_freq=validate_freq
