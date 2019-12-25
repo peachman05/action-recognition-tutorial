@@ -89,7 +89,7 @@ Output: 18 action classes
 
 ## Note
 * The hyperparameters of train.py, evaluate_model.py and webcam.py is located in header of file. You can adjust it.
-* If you face out of memory problem when you try to evaluate or train, you can decrease n_batch and n_sequence to reduce memory consumption. I suggest you should not use n_batch = 1 because the accuracy will be very swing and cannot converge
+* If you face the out of memory problem when you try to evaluate or train, you can decrease n_batch and n_sequence to reduce memory consumption. I suggest you should not use n_batch = 1 because the accuracy will be very swing and cannot converge
 
 
 
@@ -108,3 +108,11 @@ Temporal Segment Networks for Action Recognition in Videos, Limin Wang, Yuanjun 
 
 ### Dataset
 [https://data.mendeley.com/datasets/k28dtm7tr6/1](https://data.mendeley.com/datasets/k28dtm7tr6/1)
+
+## Spacial Thanks
+Beijing University of Post and Telecommunication(BUPT)
+My supervisor: Assoc Prof Dr. Hui Gao
+My mentor: ChaiXinXin
+
+Tsinghua University
+Co-supervisor: Prof Dr.Xin Su
