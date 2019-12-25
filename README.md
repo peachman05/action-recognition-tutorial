@@ -1,6 +1,8 @@
 # Action Recognition on Realtime Application
 
-This project is RGB base action recognition system that focus on real time application. We use KARD dataset to train this model. You can see more detail about dataset in [here](https://data.mendeley.com/datasets/k28dtm7tr6/1)
+This project is RGB base action recognition system that focus on real time application. We use [KARD dataset](https://data.mendeley.com/datasets/k28dtm7tr6/1) to train this model. You can check the full demo version in this youtube [link](https://www.youtube.com/channel/UChJg8ndTnT_gEyhd43Ki40Q/featured?view_as=subscriber)
+
+![alt text](https://github.com/peachman05/action-recognition-tutorial/blob/master/media/demo.gif "demo")
 
 # Overview
 
@@ -23,7 +25,7 @@ This project is RGB base action recognition system that focus on real time appli
 - CUDA 10.0 
 
 ## Dataset
-You can download dataset from [here](https://data.mendeley.com/datasets/k28dtm7tr6/1). Only RGB part is needed. Skeleton Joints and Depth data is not used. The structure of folder should be in this form
+You can download dataset from [here](https://data.mendeley.com/datasets/k28dtm7tr6/1). Skeleton joints and depth data is not used in this project. Only RGB part is needed. For preparing dataset, you should make the structure of your folder to be in this form
 ```
 KARD-split
 ├── a01                   
@@ -55,18 +57,18 @@ python webcam.py
 ```
 ## Evaluation
 
-You can use see the accuracy and confusion matrix of pretrain model by using below command.
+If you want to see accuracy and confusion matrix of pretrain model, you can run the evaluation part by using below command.
 ```
 python evaluate_model.py
 ```
 ## Training
 
-You can try to train model and can change hyperparameters in the train.py file
+You can try to train model by run this command.
 
 ```
 python train.py
 ```
-
+If you want to change any parameter, you can find it in train.py file
 
 ## Performance
 
@@ -81,10 +83,14 @@ Input: 8 RGB frames
 
 Output: 18 action classes
 
-This project use RGB Difference as input. The idea is from this [paper](https://arxiv.org/abs/1705.02953) and this [project](https://github.com/AhmedGamal1496/online-action-recognition#Introduction). I use just only LSTM as core of model. You can see the detail of architecture in model_ML.py
+* This project use RGB Difference as input. The idea is from this [paper](https://arxiv.org/abs/1705.02953) and this [project](https://github.com/AhmedGamal1496/online-action-recognition#Introduction). 
+* This project just use only simple model to solve it. I use just only LSTM as core of model and use MobileNetV2 as feature extraction part. You can see the detail of architecture in model_ML.py
+* while testing and evaluation, I will random n_sequence frames from each video file. So, n_sequence frames is "1 sample". while testing, if we random only 1 sample per 1 video file is not good because the accuracy will be unstable. So, we need to random more sample per one file. For example in evaluate_model.py, I set 'n_mul_test' to 2. It mean I will random 2 sample per one video file. You can change n_mul_test to be any value. If value is high, the accuracy will be stable but it need more testing time.
 
 ## Note
-If you want to change any parameter of train.py, evaluate_model.py and webcam.py, you can change it in the header of these files.
+* The hyperparameters of train.py, evaluate_model.py and webcam.py is located in header of file. You can adjust it.
+* If you face out of memory problem when you try to evaluate or train, you can decrease n_batch and n_sequence to reduce memory consumption. I suggest you should not use n_batch = 1 because the accuracy will be very swing and cannot converge
+
 
 
 ## Reference

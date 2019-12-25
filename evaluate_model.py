@@ -14,7 +14,7 @@ n_sequence = 8
 n_channels = 3
 n_output = 18
 batch_size = 2
-n_mul_test = 1
+n_mul_test = 2
 path_dataset = 'F:/Master Project/Dataset/KARD-split/'
 weights_path = 'weight-513-0.80-0.89.hdf5' 
 ######
