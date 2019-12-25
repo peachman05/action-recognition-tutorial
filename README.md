@@ -14,6 +14,7 @@ This project is RGB base action recognition system that focus on real time appli
 * [Performance](#performance)
 * [Method](#method)
 * [Note](#note)
+* [Acknowledgement](#acknowledgement)
 * [Reference](#reference)
 
 ## Requirement
@@ -92,7 +93,7 @@ Output: 18 action classes
 * If you face the out of memory problem when you try to evaluate or train, you can decrease n_batch and n_sequence to reduce memory consumption. I suggest you should not use n_batch = 1 because the accuracy will be very swing and cannot converge
 
 
-## Spacial Thanks
+## Acknowledgement
 ##### Beijing University of Post and Telecommunication(BUPT)
 My supervisor: Assoc Prof Dr. Hui Gao
 My mentor: ChaiXinXin
