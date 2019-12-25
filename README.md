@@ -93,14 +93,11 @@ Output: 18 action classes
 
 
 ## Spacial Thanks
-#### Beijing University of Post and Telecommunication(BUPT)
-
+##### Beijing University of Post and Telecommunication(BUPT)
 My supervisor: Assoc Prof Dr. Hui Gao
-
 My mentor: ChaiXinXin
 
-#### Tsinghua University
-
+##### Tsinghua University
 Co-supervisor: Prof Dr.Xin Su
 
 
@@ -108,14 +105,11 @@ Co-supervisor: Prof Dr.Xin Su
 ## Reference
 
 ### Example code
-
 [https://stanford.edu/~shervine/blog/keras-how-to-generate-data-on-the-fly](https://stanford.edu/~shervine/blog/keras-how-to-generate-data-on-the-fly) Data generator on keras
 [https://github.com/eriklindernoren/Action-Recognition](https://github.com/eriklindernoren/Action-Recognition) Sampling Idea
-
 [https://github.com/AhmedGamal1496/online-action-recognition#Introduction](https://github.com/AhmedGamal1496/online-action-recognition#Introduction) RGB Difference Example
 
 ### Paper
-
 Temporal Segment Networks for Action Recognition in Videos, Limin Wang, Yuanjun Xiong, Zhe Wang, Yu Qiao, Dahua Lin, Xiaoou Tang, and Luc Van Gool, TPAMI, 2018. [Arxiv Preprint](https://arxiv.org/abs/1705.02953)
 
 ### Dataset
