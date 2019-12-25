@@ -1,1 +1,0 @@
- "F:/Master Project/environment/action_reg/Scripts/activate"
