@@ -71,6 +71,7 @@ python train.py
 ## Performance
 
 Accuracy: around 87-89% (depend on which part of test set that is random)
+
 Confusion Matrix: 
 ![alt text](https://github.com/peachman05/action-recognition-tutorial/blob/master/media/confusion_matrix.png "Confusion Matrix")
 
@@ -80,7 +81,7 @@ Input: 8 RGB frames
 
 Output: 18 action classes
 
-This project use RGB Difference as input. The idea is from this paper and this project. I use just only LSTM as core of model. You can see the detail of architecture in model_ML.py
+This project use RGB Difference as input. The idea is from this [paper](https://arxiv.org/abs/1705.02953) and this [project](https://github.com/AhmedGamal1496/online-action-recognition#Introduction). I use just only LSTM as core of model. You can see the detail of architecture in model_ML.py
 
 ## Note
 If you want to change any parameter of train.py, evaluate_model.py and webcam.py, you can change it in the header of these files.
