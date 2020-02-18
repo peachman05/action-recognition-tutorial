@@ -2,10 +2,10 @@
 
 This project is RGB base action recognition system that focus on real time application. We use [KARD dataset](https://data.mendeley.com/datasets/k28dtm7tr6/1) to train this model. You can check the full demo version in this youtube [link](https://www.youtube.com/channel/UChJg8ndTnT_gEyhd43Ki40Q/featured?view_as=subscriber)
 
-KARD dataset
+KARD dataset  
 ![alt text](https://github.com/peachman05/action-recognition-tutorial/blob/master/media/demo.gif "demo")
 
-New dataset
+New dataset  
 ![alt text](https://github.com/peachman05/action-recognition-tutorial/blob/master/media/demoConv3D.gif "demo Conv3D")
 
 # Overview
