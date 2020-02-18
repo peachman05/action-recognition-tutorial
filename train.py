@@ -11,7 +11,7 @@ from tensorflow.python.keras.callbacks import ModelCheckpoint
 dim = (224,224) # for MobileNetV2
 n_sequence = 8 # for LSTM
 n_channels = 3 # color channel(RGB)
-n_output = 18 # number of output class
+n_output = 6 #18 # number of output class
 batch_size = 2
 n_mul_train = 1 # To increase sample of train set
 n_mul_test = 4 # To increase sample of test set
@@ -27,8 +27,10 @@ params = {'dim': dim,
           'option': 'RGBdiff',
           'shuffle': True}
 
-train_txt = "dataset_list/trainlist.txt"
-test_txt = "dataset_list/testlist.txt"
+# train_txt = "dataset_list/trainlist.txt"
+# test_txt = "dataset_list/testlist.txt"
+train_txt = "dataset_list/trainlistKARD6.txt"
+test_txt = "dataset_list/testlistKARD6.txt"
 
 # Read file
 # train_d and test_d is dictionary that contain name of video as key and label as value
